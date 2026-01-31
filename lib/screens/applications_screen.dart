@@ -12,12 +12,16 @@ class ApplicationsScreen extends StatefulWidget {
   State<ApplicationsScreen> createState() => _ApplicationsScreenState();
 }
 
-class _ApplicationsScreenState extends State<ApplicationsScreen> {
+class _ApplicationsScreenState extends State<ApplicationsScreen>
+    with AutomaticKeepAliveClientMixin {
   final CampaignRepository _campaignRepository = CampaignRepository();
   final AuthRepository _authRepository = AuthRepository();
   bool _isLoading = true;
   final Map<String, Campaign> _campaignsMap = {};
   List<Application> _applications = [];
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {
@@ -62,6 +66,7 @@ class _ApplicationsScreenState extends State<ApplicationsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context); // Required for AutomaticKeepAliveClientMixin
     return Scaffold(
       backgroundColor: AppColors.lightest,
       appBar: AppBar(
