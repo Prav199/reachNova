@@ -118,12 +118,12 @@ class PremiumScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
 
-            _buildPricingCard('Monthly', '\$9.99', 'per month', false),
+            _buildPricingCard('Monthly', '₹499', 'per month', false),
             const SizedBox(height: 12),
             _buildPricingCard(
-              'Yearly',
-              '\$89.99',
-              'per year',
+              'Quarterly',
+              '₹1,299',
+              'per 3 months',
               true,
               discount: 'Save 25%',
             ),

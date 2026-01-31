@@ -68,7 +68,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         children: [
           // Background Image
           Positioned.fill(
-            child: Image.asset(
+            child: Image.network(
               widget.campaign.imageUrl,
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) {
@@ -213,7 +213,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         children: [
                           _buildStatCard(
                             'Budget',
-                            '\$${widget.campaign.budget.toStringAsFixed(0)}',
+                            '₹${widget.campaign.budget.toStringAsFixed(0)}',
                             Icons.monetization_on_outlined,
                           ),
                           const SizedBox(width: 12),

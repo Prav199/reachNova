@@ -16,30 +16,28 @@ class MockService {
   // Mock User
   User _currentUser = User(
     id: 'u1',
-    name: 'Jemision',
-    email: 'jemision@example.com',
-    profileImage: 'assets/images/profile_placeholder.png',
+    name: 'Arjun Kapoor',
+    email: 'arjun.kapoor@example.in',
+    phone: '+91 98765 43210',
+    profileImage: 'assets/images/avatar.png',
     role: UserRole.influencer,
-    bio: 'Lifestyle & Tech Content Creator',
-    socialFollowing: {
-      'Instagram': 12000,
-      'YouTube': 50000,
-      'TikTok': 500, // Low count to test ineligibility
+    bio:
+        'Tech & Lifestyle Enthusiast from Mumbai. Loving the Creator Economy! 🇮🇳',
+    socialFollowing: {'Instagram': 25000, 'YouTube': 15000, 'TikTok': 0},
+    socialHandles: {
+      'Instagram': '@arjun_creates',
+      'YouTube': 'ArjunKapoorOfficial',
+      'Twitter': '@arjun_k',
     },
   );
 
-  // Mock Campaigns
-  // Mock Campaigns
   final List<Campaign> _campaigns = campaignData;
-
   final List<Application> _applications = [];
 
-  // Simulate API Delay
   Future<void> _delay() async {
     await Future.delayed(const Duration(milliseconds: 800));
   }
 
-  // API Methods
   Future<User> getUser(String id) async {
     await _delay();
     return _currentUser;
@@ -79,21 +77,14 @@ class MockService {
       id: 'n1',
       title: 'Application Accepted!',
       message:
-          'Your application for "Summer Fashion Drop" has been accepted. Check your dashboard.',
+          'Your application for "boAt Audio Revolution" has been accepted. Check your dashboard.',
       date: DateTime.now().subtract(const Duration(hours: 2)),
     ),
     NotificationItem(
       id: 'n2',
       title: 'New Campaign Alert',
-      message: 'Sony has posted a new campaign matching your profile.',
+      message: 'FabIndia has posted a new campaign matching your profile.',
       date: DateTime.now().subtract(const Duration(days: 1)),
-      isRead: true,
-    ),
-    NotificationItem(
-      id: 'n3',
-      title: 'Profile View',
-      message: 'Your profile was viewed by Adidas Marketing Team.',
-      date: DateTime.now().subtract(const Duration(days: 2)),
       isRead: true,
     ),
   ];
